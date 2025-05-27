@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viirat Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #2c2c2c;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(44, 44, 44, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4b895;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d4b895;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4b895;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1920x1080/?construction') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .hero-left {
+            width: 50%;
+            padding-top: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-left h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #d4b895, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-right {
+            width: 40%;
+            padding-top: 20px;
+            animation: fadeInRight 1s ease;
+        }
+
+        .hero-right p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: #f9f5f0;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .about-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #d4b895, #2c2c2c);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-title {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .about-title h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            line-height: 1.4;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #d4b895, #2c2c2c);
+        }
+
+        .about-text {
+            width: 100%;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-btn {
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .primary-btn {
+            background-color: #333;
+            color: white;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #333;
+        }
+
+        .about-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f5f0;
+            padding: 80px 0;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-link {
+            text-decoration: none;
+            color: inherit; /* Inherits the color from the parent element */
+            display: inline-block; /* Allows for hover effect */
+        }
+
+        .service-link:hover {
+            color: #d4b895; /* Change color on hover */
+            transform: scale(1.05); /* Slightly enlarge the text on hover */
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+        }
+
+        .services h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #d4b895, #2c2c2c);
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            width: calc(33.33% - 14px);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .service-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 15px 0;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Contact Us Section */
+        .contact-us {
+            background-color: #f9f5f0;
+            padding: 80px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .contact-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-us h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #d4b895, #2c2c2c);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #d4b895;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-icon i {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon i {
+            transform: scale(1.1);
+            background-color: #e0e0e0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .contact-value {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-value a {
+            display: inline-block;
+            margin-bottom: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            word-break: break-word;
+        }
+
+        .contact-value a:hover {
+            color: #d4b895;
+        }
+
+        .contact-value a:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-btn-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+
+        .contact-btn:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #d4b895;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #d4b895;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4b895;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #d4b895;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-left h1 {
+                font-size: 3.5rem;
+            }
+            
+            .service-card {
+                width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-around;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-left, .hero-right {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-left h1 {
+                font-size: 3rem;
+            }
+            
+            .service-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                Viirat CConstruction
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="home">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-left">
+                <h1>BUILDING<br>DREAMS<br>TOGETHER</h1>
+            </div>
+            
+            <div class="hero-right">
+                <p style="font-size: 23px;">Viirat CConstruction is your trusted partner for all construction needs. With a commitment to quality, innovation, and customer satisfaction, we bring your construction dreams to life.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Us Section -->
+    <div class="about-us" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-title">
+                    <h2>ABOUT VIIRAT CCONSTRUCTION</h2>
+                </div>
+                <div class="about-text">
+                    <p><strong>Our Legacy:</strong> Viirat CConstruction, an extension of the esteemed Charotar Construction, embodies a legacy of 65 years in the industry. We specialize in a diverse range of construction services including new constructions, repair, rehabilitation, waterproofing, and industrial projects.</p>
+                    
+                    <p><strong>Our Expertise:</strong> Our clientele includes building owners and multinational corporations. We pride ourselves on our green and golden aesthetic, delivering projects that combine functionality with visual appeal.</p>
+                    
+                    <p><strong>Our Commitment:</strong> As your reliable partner in construction and renovation projects, we are committed to delivering top-notch quality and excellence. Our skilled team is devoted to offering customized solutions that cater to your specific construction needs.</p>
+                    
+                    <p><strong>Our Services:</strong> We excel in new builds, effective waterproofing services, and expanding existing structures. Our comprehensive range of services includes epoxy applications, injection grouting, painting, and floor coatings.</p>
+                    
+                    <p><strong>Our Vision:</strong> Enter a realm of dependability and craftsmanship with Viirat Construction, where your aspirations become our priority. We strive to transform your construction dreams into reality with precision and dedication.</p>
+                    
+                    <div class="about-buttons">
+                        <a href="#services" class="about-btn primary-btn">View Our Services</a>
+                        <a href="#contact" class="about-btn secondary-btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Services Section -->
+    <div class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="1.jpg" alt="AM/NS Steel Logo" width="250" height="250">
+                    </div>
+                    <div class="service-content">
+                        <a href="construction.html" class="service-link">
+                        <h3 class="service-title">Construction</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">From conceptualization to completion, we deliver high-quality of construction projects that meet your specifications and budget.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="architect.jpg" alt="AM/NS Steel Logo" width="250" height="250">
+                    </div>
+                    <div class="service-content">
+                        <a href="architect.html" class="service-link">
+                        <h3 class="service-title">Architecture</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">From concept to blueprint, our architectural team blends technical expertise with artistic insight to deliver designs that are efficient, durable, and thoughtfully crafted to enhance everyday experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="home automation.png" alt="AM/NS Steel Logo" width="250" height="250">
+                    </div>
+                    <div class="service-content">
+                        <a href="home automation.html" class="service-link">
+                        <h3 class="service-title">Home Automation</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">Our smart home solutions fuse cutting-edge technology with intuitive design, creating connected spaces that elevate how you live, work, and relax.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="electric.jpg" alt="AM/NS Steel Logo" width="250" height="200">
+                    </div>
+                    <div class="service-content">
+                        <a href="electrification.html" class="service-link">
+                        <h3 class="service-title">Electrification</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">We power spaces with intelligent electrification solutions, ensuring safety, efficiency, and long-term reliability across residential, commercial, and industrial projects.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="fabrication.jpeg" alt="AM/NS Steel Logo">
+                    </div>
+                    <div class="service-content">
+                        <a href="fabrication.html" class="service-link">
+                        <h3 class="service-title">Fabrication Work</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">We specialize in precision metal fabrication for structural components, providing durable solutions tailored to your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="light.jpg" alt="AM/NS Steel Logo" width="250" height="250">
+                    </div>
+                    <div class="service-content">
+                        <a href="light solution.html" class="service-link">
+                        <h3 class="service-title">Lighting solutions</h3></a>
+                        <div class="service-divider"></div>
+                        <p class="service-description">We design lighting systems that blend aesthetics, comfort, and energy efficiency—illuminating spaces intelligently while enhancing mood, functionality, and overall ambiance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Clients Section -->
+    
+    <!-- Contact Us Section -->
+    <div class="contact-us" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="contact-label">Contact Name</div>
+                    <div class="contact-value">JAYESH PATEL<br>HARSH PATEL</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-label">Contact Number</div>
+                    <div class="contact-value">
+                        <a href="tel:9825126942">9825126942</a><br>
+                        <a href="tel:9712989126">9712989126</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:charotar_construction@yahoo.co.in">charotar_construction@yahoo.co.in</a><br>
+                        <a href="mailto:viiratcconstruction@gmail.com">viiratcconstruction@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-label">Address</div>
+                    <div class="contact-value">105, SAIF APPARTMENT LAMBA HANUNAM ROAD B/H ST BUS DEPOT SURAT -395006</div>
+                </div>
+            </div>
+            <div class="contact-btn-container">
+                <a href="mailto:viiratcconstruction@gmail.com" class="contact-btn">Send Email</a>
+                <a href="tel:9825126942" class="contact-btn">Call Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Viirat CConstruction</h3>
+                <p>Built On Trust , Focused On Quality</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="construction.html">Construction</a></li>
+                    <li><a href="architect.html">Architecture</a></li>
+                    <li><a href="home automation.html">Home Automation</a></li>
+                    <li><a href="electrification.html">Electrification</a></li>
+                    <li><a href="fabrication.html">Fabrication Work</a></li>
+                    <li><a href="light solution.html">Lighting Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:9825126942">9825126942</a></li>
+                    <li><a href="tel:9712989126">9712989126</a></li>
+                    <li><a href="mailto:charotar_construction@yahoo.co.in">charotar_construction@yahoo.co.in</a></li>
+                    <li><a href="mailto:viiratcconstruction@gmail.com">viiratcconstruction@gmail.com</a></li>
+                    <li><a href="location">105, SAIF APPARTMENT,L.H ROAD, SURAT-395006</a></li>
+                    <li>GST Number: 24AUWPP3762E1Z8</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 Viirat CConstruction. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Service card animations
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 300 + 500);
+        });
+
+        // Client animations
+        const clientItems = document.querySelectorAll('.client-item');
+        
+        clientItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, index * 400 + 500);
+        });
+
+        // Contact animations
+        const contactItems = document.querySelectorAll('.contact-item');
+        
+        contactItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, index * 300 + 500);
+        });
+
+        // Add hover effects to service cards
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Add hover effects to contact items
+        contactItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-10px)';
+                item.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+                item.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        // Add animation to hero text
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroTitle = document.querySelector('.hero-left h1');
+            const heroText = document.querySelector('.hero-right p');
+            
+            heroTitle.style.opacity = '0';
+            heroText.style.opacity = '0';
+            
+            setTimeout(() => {
+                heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
+                heroTitle.style.opacity = '1';
+                heroTitle.style.transform = 'translateY(0)';
+            }, 300);
+            
+            setTimeout(() => {
+                heroText.style.transition = 'opacity 1s ease, transform 1s ease';
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+            }, 800);
+        });
+    </script>
+</body>
+</html>
