@@ -208,6 +208,76 @@
             line-height: 1.5;
             margin-bottom: 10px;
         }
+         /* work showcase */ 
+         .completed-work {
+            background-color: #f9f5f0;
+            padding: 80px 0;
+        }
+
+        .completed-work h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .completed-work h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #d4b895, #2c2c2c);
+        }
+
+        .work-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .work-card {
+            width: calc(33.33% - 14px);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .work-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .work-content {
+            padding: 20px;
+        }
+
+        .work-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .work-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
         /* Footer */
         .footer {
             background-color: #2c2c2c;
@@ -436,6 +506,69 @@
     </div>
     
     <!-- Work Showcase Section --> 
+     <div class="completed-work" id="completed-work">
+        <div class="container">
+            <h2>Work Showcase</h2>
+            <div class="work-cards">
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="bombay.webp" alt="Project 1" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Bombay Market</h3>
+                        <p class="work-description">Bombay Market is a landmark commercial complex featuring a dynamic Market Building Block, a modern 17-storey high-rise, an efficient Administrative Block, and a state-of-the-art Corporate Office Building — all designed to support vibrant retail, business, and administrative functions under one integrated space.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="WATER TANK.jpg" alt="Project 2" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Water Tank</h3>
+                        <p class="work-description">We successfully constructed a 123 lakh liter capacity Underground Sump Reservoir (UGSR), complete with an integrated booster house. This project involved advanced engineering techniques to ensure efficient water storage, distribution, and pressure management for the facility.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="causeway.jpg" alt="Project 3" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Water Sports Site</h3>
+                        <p class="work-description">We successfully completed the construction of the platform ramp and steps at the Singapore Water Sports Site, ensuring safe and easy access for participants and visitors. The project involved careful planning and execution to meet the site's functional and aesthetic requirements.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="sdca.png" alt="Project 4" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">SDCA (The Surat District Cricket Association)</h3>
+                        <p class="work-description">Construction of the Swimming Pool: A 55x13 meter pool, ensuring structural integrity and functionality, Mechanical Works for Comprehensive upgrades to the pool's mechanical systems and Extension of the Main Pavilion Building.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="bahumali.avif" alt="Project 5" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Bahumali Surat sadan</h3>
+                        <p class="work-description">We successfully completed the construction of the main building of Bahumali and also carried out the structural design, showcasing our expertise in delivering high-quality, technically sound infrastructure from concept to completion.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="swimming.webp" alt="Project 6" width="250" height="250">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">	Maharana Pratap Swimming Pool</h3>
+                        <p class="work-description">We proudly executed the construction of the Maharana Pratap Swimming Pool, featuring a 25.0 m x 50.0 m Olympic-size pool complete with all associated civil, mechanical and electric works. The project included advanced filtration systems, poolside development, drainage, and support infrastructure — creating a modern, fully-equipped facility for professional and recreational use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -466,8 +599,9 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <ul class="footer-links">
-                    <li><a href="tel:9825126942">9825126942</a></li>
-                    <li><a href="tel:9712989126">9712989126</a></li>
+                    <li><a href="tel:+91 9825126942">+91 9825126942</a></li>
+                    <li><a href="tel:+91 9712989126">+91 9712989126</a></li>
+                    <li><a href="tel:+91 9879579871">+91 9879579871</a></li>
                     <li><a href="mailto:charotar_construction@yahoo.co.in">charotar_construction@yahoo.co.in</a></li>
                     <li><a href="mailto:viiratcconstruction@gmail.com">viiratcconstruction@gmail.com</a></li>
                     <li><a href="location">105, SAIF APPARTMENT, L.H ROAD, SURAT-395006</a></li>
