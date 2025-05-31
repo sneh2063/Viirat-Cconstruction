@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viirat Construction - Construction</title>
+    <title>Viirat Construction - Construction Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -138,13 +138,13 @@
             margin-bottom: 30px;
         }
 
-        /* Construction Sections */
-        .construction {
+        /* Construction Types Section */
+        .construction-types {
             background-color: #f9f5f0;
             padding: 80px 0;
         }
 
-        .construction h2 {
+        .construction-types h2 {
             font-size: 2.5rem;
             margin-bottom: 50px;
             text-align: center;
@@ -152,7 +152,7 @@
             padding-bottom: 15px;
         }
 
-        .construction h2::after {
+        .construction-types h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -163,7 +163,7 @@
             background: linear-gradient(to right, #d4b895, #2c2c2c);
         }
 
-        .construction-card {
+        .construction-type-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -178,7 +178,7 @@
             transition: all 1s ease;
         }
 
-        .construction-image {
+        .construction-type-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
@@ -186,30 +186,31 @@
             margin: 20px;
         }
 
-        .construction-image img {
+        .construction-type-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .construction-content {
+        .construction-type-content {
             flex: 1;
             padding: 20px;
         }
 
-        .construction-title {
+        .construction-type-name {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .construction-description {
+        .construction-type-description {
             font-size: 1rem;
             color: #666;
             line-height: 1.5;
             margin-bottom: 10px;
         }
-         /* work showcase */ 
-         .completed-work {
+
+        /* Completed Work Section */
+        .completed-work {
             background-color: #f9f5f0;
             padding: 80px 0;
         }
@@ -278,6 +279,7 @@
             color: #666;
             line-height: 1.5;
         }
+
         /* Footer */
         .footer {
             background-color: #2c2c2c;
@@ -391,40 +393,105 @@
             .hero-left h1 {
                 font-size: 3.5rem;
             }
+            
+            .construction-type-card, .work-card {
+                width: calc(50% - 15px);
+            }
         }
 
         @media (max-width: 768px) {
             .navbar {
                 padding: 15px;
             }
+            
             .nav-container {
                 flex-direction: column;
             }
+            
             .logo {
                 margin-bottom: 15px;
             }
+            
             .nav-links {
                 width: 100%;
                 justify-content: space-around;
             }
+            
             .nav-links li {
                 margin: 0;
             }
+            
             .hero {
                 flex-direction: column;
             }
+            
             .hero-left, .hero-right {
                 width: 100%;
                 text-align: center;
             }
+            
             .hero-left h1 {
                 font-size: 3rem;
+            }
+            
+            .construction-type-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .construction-type-image {
+                width: 150px;
+                height: 150px;
+                margin: 20px auto;
+            }
+
+            .construction-type-content {
+                padding: 10px;
+            }
+
+            .construction-type-name {
+                font-size: 1.2rem;
+            }
+
+            .construction-type-description {
+                font-size: 0.9rem;
+            }
+
+            .work-card {
+                width: 100%;
             }
         }
 
         @media (max-width: 576px) {
             .hero-left h1 {
                 font-size: 2.5rem;
+            }
+            
+            .construction-type-card {
+                margin-bottom: 30px;
+            }
+
+            .construction-type-image {
+                width: 120px;
+                height: 120px;
+                margin: 15px auto;
+            }
+
+            .construction-type-content {
+                padding: 5px;
+            }
+
+            .construction-type-name {
+                font-size: 1.1rem;
+            }
+
+            .construction-type-description {
+                font-size: 0.8rem;
+            }
+
+            .work-card {
+                width: 100%;
             }
         }
     </style>
@@ -438,9 +505,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">About</a></li>
-                <li><a href="index.html">Services</a></li>
-                <li><a href="index.html">Contact</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -449,64 +516,54 @@
         <!-- Hero Section -->
         <div class="hero">
             <div class="hero-left">
-                <h1>CONSTRUCTION</h1>
+                <h1>CONSTRUCTION SERVICES</h1>
             </div>
+            
             <div class="hero-right">
-                <p style="font-size: 23px;">Our construction team is dedicated to delivering high-quality projects on time and within budget. We specialize in industrial, commercial, and residential construction, ensuring each project meets the highest standards of safety, durability, and design. With over 80 successfully completed projects, our track record reflects our commitment to excellence across every sector.</p>
+                <p style="font-size: 23px;">Our construction team is dedicated to delivering high-quality projects on time and within budget. We specialize in industrial, commercial, and residential construction, ensuring each project meets the highest standards of safety, durability, and design. With over 80 successfully completed projects, our track record reflects our commitment to excellence across every sector..</p>
             </div>
         </div>
     </div>
     
-    <!-- Industrial Construction Section -->
-    <div class="construction" id="industrial-construction">
+    <!-- Construction Types Section -->
+    <div class="construction-types" id="construction-types">
         <div class="container">
-            <h2>Industrial Construction</h2>
-            <div class="construction-card">
-                <div class="construction-image">
-                    <img src="fabrication.jpeg" alt="Industrial Construction" width="200" height="200">
+            <h2>Our Services</h2>
+            
+            <div class="construction-type-card">
+                <div class="construction-type-image">
+                    <img src="resid.jpg" alt="Residential" width="200" height="200">
                 </div>
-                <div class="construction-content">
-                    <h3 class="construction-title">Industrial Projects</h3>
-                    <p class="construction-description">We specialize in constructing robust industrial facilities designed to meet the unique needs of manufacturing, logistics, and heavy industry. Our team ensures compliance with industry standards and regulatory requirements, delivering durable and efficient structures. With a proven track record, we have successfully completed over 10 industrial projects, demonstrating our commitment to quality and reliability.</p>
+                <div class="construction-type-content">
+                    <h3 class="construction-type-name">Residential Construction</h3>
+                    <p class="construction-type-description">We build homes that are not just structures, but places where families thrive. Our residential construction services include custom homes, renovations, and multi-family units, all designed to meet the highest standards of comfort and quality. With over 15 completed residential projects, we bring experience, care, and craftsmanship to every home we build.</p>
+                </div>
+            </div>
+
+            <div class="construction-type-card">
+                <div class="construction-type-image">
+                    <img src="fabrication.jpeg" alt="Industrial" width="200" height="200">
+                </div>
+                <div class="construction-type-content">
+                    <h3 class="construction-type-name">Industrial Construction</h3>
+                    <p class="construction-type-description">We specialize in constructing robust industrial facilities designed to meet the unique needs of manufacturing, logistics, and heavy industry. Our team ensures compliance with industry standards and regulatory requirements, delivering durable and efficient structures. With a proven track record, we have successfully completed over 10 industrial projects, demonstrating our commitment to quality and reliability.</p>
+                </div>
+            </div>
+
+            <div class="construction-type-card">
+                <div class="construction-type-image">
+                    <img src="bombay.webp" alt="Commercial" width="200" height="200">
+                </div>
+                <div class="construction-type-content">
+                    <h3 class="construction-type-name">Commercial Construction</h3>
+                    <p class="construction-type-description">A modern commercial office building with a sleek design and advanced infrastructure. The project includes energy-efficient systems and ergonomic workspaces. We have successfully completed over 50 commercial projects, showcasing our expertise in delivering high-performance, future-ready work environments.</p>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Commercial Construction Section -->
-    <div class="construction" id="commercial-construction">
-        <div class="container">
-            <h2>Commercial Construction</h2>
-            <div class="construction-card">
-                <div class="construction-image">
-                    <img src="bombay.webp" alt="Commercial Construction" width="200" height="200">
-                </div>
-                <div class="construction-content">
-                    <h3 class="construction-title">Commercial Projects</h3>
-                    <p class="construction-description">A modern commercial office building with a sleek design and advanced infrastructure. The project includes energy-efficient systems and ergonomic workspaces. We have successfully completed over 50 commercial projects, showcasing our expertise in delivering high-performance, future-ready work environments.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Residential Construction Section -->
-    <div class="construction" id="residential-construction">
-        <div class="container">
-            <h2>Residential Construction</h2>
-            <div class="construction-card">
-                <div class="construction-image">
-                    <img src="resid.jpg" alt="Residential Construction" width="200" height="200">
-                </div>
-                <div class="construction-content">
-                    <h3 class="construction-title">Residential Projects</h3>
-                    <p class="construction-description">We build homes that are not just structures, but places where families thrive. Our residential construction services include custom homes, renovations, and multi-family units, all designed to meet the highest standards of comfort and quality. With over 15 completed residential projects, we bring experience, care, and craftsmanship to every home we build.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Work Showcase Section --> 
-     <div class="completed-work" id="completed-work">
+    <!-- Completed Work Section -->
+    <div class="completed-work" id="completed-work">
         <div class="container">
             <h2>Work Showcase</h2>
             <div class="work-cards">
@@ -539,15 +596,17 @@
                         <p class="work-description">We successfully completed the construction of the platform ramp and steps at the Singapore Water Sports Site, ensuring safe and easy access for participants and visitors. The project involved careful planning and execution to meet the site's functional and aesthetic requirements.</p>
                     </div>
                 </div>
+                
                 <div class="work-card">
                     <div class="work-image">
                         <img src="sdca.png" alt="Project 4" width="250" height="250">
                     </div>
                     <div class="work-content">
                         <h3 class="work-title">SDCA (The Surat District Cricket Association)</h3>
-                        <p class="work-description">Construction of the Swimming Pool: A 55x13 meter pool, ensuring structural integrity and functionality, Mechanical Works for Comprehensive upgrades to the pool's mechanical systems and Extension of the Main Pavilion Building.</p>
+                        <p class="work-description">Construction of the Swimming Pool: A 55x13 meter pool, ensuring structural integrity and functionality, Mechanical Works for Comprehensive upgrades to the pool's mechanical systems and Extension of the Main Pavilion Building..</p>
                     </div>
                 </div>
+                
                 <div class="work-card">
                     <div class="work-image">
                         <img src="bahumali.avif" alt="Project 5" width="250" height="250">
@@ -557,18 +616,20 @@
                         <p class="work-description">We successfully completed the construction of the main building of Bahumali and also carried out the structural design, showcasing our expertise in delivering high-quality, technically sound infrastructure from concept to completion.</p>
                     </div>
                 </div>
+                
                 <div class="work-card">
                     <div class="work-image">
                         <img src="swimming.webp" alt="Project 6" width="250" height="250">
                     </div>
                     <div class="work-content">
-                        <h3 class="work-title">	Maharana Pratap Swimming Pool</h3>
+                        <h3 class="work-title">Maharana Pratap Swimming Pool</h3>
                         <p class="work-description">We proudly executed the construction of the Maharana Pratap Swimming Pool, featuring a 25.0 m x 50.0 m Olympic-size pool complete with all associated civil, mechanical and electric works. The project included advanced filtration systems, poolside development, drainage, and support infrastructure — creating a modern, fully-equipped facility for professional and recreational use.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -576,15 +637,17 @@
                 <h3>Viirat CConstruction</h3>
                 <p>Built On Trust , Focused On Quality</p>
             </div>
+            
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../services.html">Services</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
@@ -596,6 +659,7 @@
                     <li><a href="light solution.html">Lighting Solutions</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3>Contact</h3>
                 <ul class="footer-links">
@@ -604,11 +668,12 @@
                     <li><a href="tel:+91 9879579871">+91 9879579871</a></li>
                     <li><a href="mailto:charotar_construction@yahoo.co.in">charotar_construction@yahoo.co.in</a></li>
                     <li><a href="mailto:viiratcconstruction@gmail.com">viiratcconstruction@gmail.com</a></li>
-                    <li><a href="location">105, SAIF APPARTMENT, L.H ROAD, SURAT-395006</a></li>
+                    <li><a href="location">105, SAIF APPARTMENT,L.H ROAD, SURAT-395006</a></li>
                     <li>GST Number: 24AUWPP3762E1Z8</li>
                 </ul>
             </div>
         </div>
+        
         <div class="copyright">
             &copy; 2024 Viirat CConstruction. All rights reserved.
         </div>
@@ -629,15 +694,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
 
-        // Construction card animations
-        const constructionCards = document.querySelectorAll('.construction-card');
-        constructionCards.forEach((card, index) => {
+        // Construction type card animations
+        const constructionTypeCards = document.querySelectorAll('.construction-type-card');
+        
+        constructionTypeCards.forEach((card, index) => {
             setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
@@ -646,6 +713,7 @@
 
         // Work card animations
         const workCards = document.querySelectorAll('.work-card');
+        
         workCards.forEach((card, index) => {
             setTimeout(() => {
                 card.style.opacity = '1';
