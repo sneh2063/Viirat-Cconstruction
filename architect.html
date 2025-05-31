@@ -447,7 +447,31 @@
                 font-size: 3rem;
             }
             
-            .employee-card, .work-card {
+            .employee-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .employee-image {
+                width: 150px;
+                height: 150px;
+                margin: 20px auto;
+            }
+
+            .employee-content {
+                padding: 10px;
+            }
+
+            .employee-name {
+                font-size: 1.2rem;
+            }
+
+            .employee-role, .employee-qualifications, .employee-experience {
+                font-size: 0.9rem;
+            }
+
+            .work-card {
                 width: 100%;
             }
         }
@@ -457,7 +481,29 @@
                 font-size: 2.5rem;
             }
             
-            .employee-card, .work-card {
+            .employee-card {
+                margin-bottom: 30px;
+            }
+
+            .employee-image {
+                width: 120px;
+                height: 120px;
+                margin: 15px auto;
+            }
+
+            .employee-content {
+                padding: 5px;
+            }
+
+            .employee-name {
+                font-size: 1.1rem;
+            }
+
+            .employee-role, .employee-qualifications, .employee-experience {
+                font-size: 0.8rem;
+            }
+
+            .work-card {
                 width: 100%;
             }
         }
@@ -472,9 +518,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">About</a></li>
-                <li><a href="index.html">Services</a></li>
-                <li><a href="index.html">Contact</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -561,10 +607,10 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#about.html">About</a></li>
-                    <li><a href="../services.html">Services</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
             
